@@ -1,4 +1,4 @@
-import React, { View, PropTypes, Platform } from 'react-native';
+import React, { View, PropTypes, Platform, Animated } from 'react-native';
 import { Surface, Shape, Path, Group } from '../../react-native/Libraries/ART/ReactNativeART';
 import MetricsPath from 'art/metrics/path';
 
@@ -38,7 +38,7 @@ export default class CircularProgress extends React.Component {
     const circlePath = this.circlePath(size / 2, size / 2, size / 2 - width / 2, 0, 360 * fill / 100);
 
     return (
-      <View style={style}>
+      <Animated.View style={style}>
         <Surface
           width={size}
           height={size}>
@@ -55,7 +55,7 @@ export default class CircularProgress extends React.Component {
         {
           children && children(fill)
         }
-      </View>
+      </Animated.View>
     )
   }
 }
